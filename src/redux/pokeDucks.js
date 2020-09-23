@@ -6,7 +6,7 @@ const dataInicial = {
     offset: 0
 }
 
-//types
+// types
 const GET_POKE_SUCCESS = 'GET_POKE_SUCCESS'
 const GET_POKE_TWENTY = 'GET_POKE_TWENTY'
 
@@ -22,11 +22,7 @@ export default function pokeReducer(state = dataInicial, action){
     }
 }
 
-// acciones
-// por que 2 fx de flecha? 
-// en la 1ra vamos a recibir los params que vamos a necesitar para esa fx. En este caso, ObtenerPokes... no necesita params.
-// la segunda va a necesitar dispatch y getState. Va el async porque es un pedido.
-
+// actions
 export const getPokesAction = () => async (dispatch, getState) => {
 
     const {offset} = getState().pokemons
@@ -44,7 +40,6 @@ export const getPokesAction = () => async (dispatch, getState) => {
 
 export const getPokeTwenty = () => async (dispatch, getState) => {
     
-    //primera alternativa
     const {offset} = getState().pokemons
     const siguiente = offset + 20
 
